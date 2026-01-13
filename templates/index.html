@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Calculadora Básica</h2>
+
+    <form method="post">
+        <input type="number" step="any" name="a" placeholder="Digite um número" required>
+        <input type="number" step="any" name="b" placeholder="Digite outro número" required>
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado %}
+    <div class="resultado">
+        <p>Adição: {{ resultado.adicao }}</p>
+        <p>Subtração: {{ resultado.subtracao }}</p>
+        <p>Multiplicação: {{ resultado.multiplicacao }}</p>
+        <p>Divisão: {{ resultado.divisao }}</p>
+        <br>
+        <strong>Isso é tudo pessoal!!</strong>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
